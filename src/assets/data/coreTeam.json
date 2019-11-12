@@ -1,7 +1,7 @@
 [
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Harsh Singh",
+        "designation":"Lead",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
@@ -9,48 +9,21 @@
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
-        "twitter":"https://twitter.com/vrijrajsingh",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
-        "profileImage":"",
-        "website":""
+        "name":"Dewansh Rawat",
+        "designation":"Core Team Member",
+        "twitter":"https://twitter.com/dewanshrawat15",
+        "linkedin":"https://www.linkedin.com/in/dewanshrawat15",
+        "github":"https://github.com/dewanshrawat15",
+        "profileImage":"dewanshrawat15.jpg",
+        "website":"https://dewanshrawat.tech/"
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
-        "twitter":"https://twitter.com/vrijrajsingh",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
-        "profileImage":"",
-        "website":""
-    },
-    {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Anmol Karn",
+        "designation":"Core Team Member",
         "twitter":"",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
+        "linkedin":"https://www.linkedin.com/in/dewanshrawat15",
+        "github":"https://github.com/codetronaut",
         "profileImage":"",
-        "website":""
-    },
-    {
-        "name":"Name",
-        "designation":"Front End Developer",
-        "twitter":"https://twitter.com/vrijrajsingh",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
-        "profileImage":"",
-        "website":""
-    },
-    {
-        "name":"Name",
-        "designation":"Front End Developer",
-        "twitter":"https://twitter.com/vrijrajsingh",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
-        "profileImage":"",
-        "website":""
+        "website":"https://anmol.me/"
     }
 ]

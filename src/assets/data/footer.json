@@ -1,12 +1,16 @@
 {
     "AboutSession":[
         {
-            "LinkName":"GDG Jalandhar",
+            "LinkName":"DSC BVP Pune",
             "Link":"/"
         },
         {
-            "LinkName":"Google Developers Groups",
+            "LinkName":"Developer Student Clubs",
             "Link":"https://developers.google.com/programs/community/dsc/"
+        },
+        {
+            "LinkName":"Google Developers Group",
+            "Link":"https://developers.google.com/programs/community/gdg/"
         },
         {
             "LinkName":"WomenTechamkers",
