@@ -1,0 +1,21 @@
+{
+    "FeatureEventName":"Flutter Interact: Viewing Party",
+    "EventImage":"IWD.jpg",
+    "EventDate":{
+        "Date":"15",
+        "Month":"12",
+        "Year":"2019"
+    },
+    "EventTime":{
+        "StartTime":"10:00 AM",
+        "EndTime":"13:30 PM"
+    },
+    "EventVenue":"Engineering Library, College of Engineering, Bharati Vidyapeeth Pune, Katraj, Pune",
+    "EventVenueMapLink":"https://goo.gl/maps/4Z8pminYsp42",
+    "EventWebsite":"https://iwd.gdgjalandhar.com/",
+    "EventDescription":"Flutter Interact Viewing Party is an event livestream from the Flutter Interact session being held in Brooklyn, NY. We’ll showcase the latest from Google Design and Flutter, Google’s free and open source UI toolkit to build beautiful, natively compiled applications for mobile, web, and desktop - all from a single codebase.",
+    "MeetupLink":"https://www.meetup.com/GDG-Jalandhar/events/253165595/",
+    "RegistrationLink":"https://docs.google.com/forms/d/e/1FAIpQLSciM-nL87uQd_it2ulou1mFv55aXqE9qSSnwL3No3fWhX8OzA/closedform",
+    "FBEventPageURL":""
+}
+
