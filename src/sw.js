@@ -13,6 +13,7 @@ self.addEventListener('message', (e) => {
     }
   });
   
+  var workbox;
   workbox.clientsClaim();
   
   // The precaching code provided by Workbox.
