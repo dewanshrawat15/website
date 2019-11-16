@@ -1,0 +1,71 @@
+{
+    "upcomingEvent": [
+        {
+            "title": "Flutter Interact Viewing Party",
+            "date": "2019-12-12",
+            "time": "16:00 - 19:30",
+            "description": "Flutter Interact is a day dedicated to creation and collaboration with the world, inspired by the makers of brilliant experiences.",
+            "venue": "Engineering Library",
+            "icon": "FI",
+            "link": ""
+        }
+    ],
+    "events": [
+        {
+            "title": "Hacktoberfest in Bharati Vidyapeeth Pune",
+            "date": "2019-10-07",
+            "time": "16:00 - 19:30",
+            "link": "",
+            "icon": "HF",
+            "speaker": "Dewansh Rawat"
+        },
+        {
+            "title": "C and Data Structures",
+            "date": "2019-09-21",
+            "time": "13:30 - 15:30",
+            "link": "",
+            "icon": "DS",
+            "speaker": "Viplav Anand"
+        },
+        {
+            "title": "Getting Started with PHP",
+            "date": "2019-09-14",
+            "time": "13:30 - 15:30",
+            "link": "",
+            "icon": "PHP",
+            "speaker": "Aayushi Gupta"
+        },
+        {
+            "title": "Linux Components and Shell Scripting",
+            "date": "2019-09-07",
+            "time": "13:30 - 15:30",
+            "link": "",
+            "icon": "LS",
+            "speaker": "Anmol Karn"
+        },
+        {
+            "title": "Hands on with Flutter",
+            "date": "2019-08-24",
+            "time": "13:30 - 16:00",
+            "link": "",
+            "icon": "FL",
+            "speaker": "Dewansh Rawat"
+        },
+        {
+            "title": "101 Machine Learning",
+            "date": "2019-02-23",
+            "time": "16:00 - 18:00",
+            "link": "",
+            "icon": "ML",
+            "speaker": "Sumedh Bhalerao"
+        },
+        {
+            "title": "Automation with Python",
+            "date": "2019-02-16",
+            "time": "16:00 - 19:00",
+            "link": "",
+            "icon": "PY",
+            "speaker": "Dewansh Rawat"
+        }
+    ]
+}

@@ -29,10 +29,6 @@
         {
             "LinkName" : "Call for Speaker",
             "Link" : "mailto:dscbvppune@gmail.com"
-        },
-        {
-            "LinkName" : "Media Kit",
-            "Link" : "https://drive.google.com/drive/folders/16rHDaHbuS_YApMWgJHUxygpd-A5gCkLK"
         }
     ],
     "DevConsole":[
@@ -57,10 +53,6 @@
         {
             "LinkName" : "Code of Conduct",
             "Link" : "/about"
-        },
-        {
-            "LinkName" : "Terms & Servies",
-            "Link" : "https://docs.google.com/document/d/14g3fv9NItiB8Hd-YGYyVYd2N4LRxe6Bx3syWse_wsiA/edit?usp=sharing"
         }
     ]
 }

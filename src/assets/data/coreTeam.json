@@ -5,7 +5,7 @@
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"harsh.jpeg",
         "website":""
     },
     {
@@ -23,7 +23,97 @@
         "twitter":"",
         "linkedin":"https://www.linkedin.com/in/dewanshrawat15",
         "github":"https://github.com/codetronaut",
+        "profileImage":"anmol.jpeg",
+        "website":""
+    },
+    {
+        "name":"Siddhant Mishra",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"siddhant.jpeg",
+        "website":""
+    },
+    {
+        "name":"Vansh Bhasin",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"https://www.linkedin.com/in/vanshbhasin157",
+        "github":"https://github.com/vanshbhasin157",
+        "profileImage":"vansh.jpeg",
+        "website":"https://vanshbhasin157.github.io/"
+    },
+    {
+        "name":"Aayushi Gupta",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"https://github.com/aayushigupta108",
+        "profileImage":"aayushi.jpeg",
+        "website":""
+    },
+    {
+        "name":"Vikas Sharma",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"vikas.jpeg",
+        "website":""
+    },
+    {
+        "name":"Satwik Dalvi",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"satwik.jpeg",
+        "website":""
+    },
+    {
+        "name":"Sarthak Pol",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"sarthak.jpeg",
+        "website":""
+    },
+    {
+        "name":"Viplav Anand",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"viplav.jpeg",
+        "website":""
+    },
+    {
+        "name":"Pratham Khandelwal",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"pratham.jpeg",
+        "website":""
+    },
+    {
+        "name":"Ashutosh Jha",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
         "profileImage":"",
-        "website":"https://anmol.me/"
+        "website":""
+    },
+    {
+        "name":"Shrey Kumar",
+        "designation":"Core Team Member",
+        "twitter":"",
+        "linkedin":"",
+        "github":"",
+        "profileImage":"",
+        "website":""
     }
 ]
