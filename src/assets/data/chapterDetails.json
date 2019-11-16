@@ -2,7 +2,7 @@
     "ChapterName":"DSC BVP Pune",
     "ChapterShortDescription":"A Google Developers program for university students, with the aim to help students build their development skills and knowledge.",
     "ChapterLongDec":"Developer Student Clubs (DSC BVP Pune) is a Google Developers program for university students to learn mobile and web development skills. The clubs is  open to any student, ranging from novice developers who are just starting, to advanced developers who want to further their skills. The clubs is intended as a space for students to try out new ideas and collaborate to solve mobile and web development problems.",
-    "ChapterMeetupLink":"https://www.github.com/dsc-bvp-pune",
+    "ChapterMeetupLink":"https://www.github.com/dscbvppune",
     "ChapterEmail":"dscbvppune@gmail.com",
     "website":"https://gdgjalandhar.com",
     "GDGProgramWebsite":"https://developers.google.com/community/dsc/",
@@ -10,7 +10,7 @@
     "socialLinks":[
         {
             "name" : "Instagram",
-            "link" : "https://www.instagram.com/dsc-bvp-pune/",
+            "link" : "https://www.instagram.com/dscbvppune/",
             "icon" : "fab fa-instagram"
         },
         {

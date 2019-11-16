@@ -48,17 +48,6 @@
                     <span>See {{eventDetails.FeatureEventName}} Website</span>
                 </v-tooltip>
 
-                <v-tooltip top slot="activator" 
-                v-if="eventDetails.MeetupLink.length>0">
-                    <v-btn flat icon color="#616161"
-                    :href="eventDetails.MeetupLink"
-                    target="_blank"
-                    class="ma-0 elevation-0" slot="activator" style="text-transform: capitalize;border-radius:5px;"> 
-                        <v-icon>fab fa-meetup</v-icon>
-                    </v-btn>
-                    <span>See {{eventDetails.FeatureEventName}} Meetup</span>
-                </v-tooltip>
-
                 <v-tooltip top slot="activator" v-if="eventDetails.FBEventPageURL.length>0">
                     <v-btn flat icon color="#616161"
                     :href="eventDetails.FBEventPageURL"
