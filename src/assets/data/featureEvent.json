@@ -1,6 +1,6 @@
 {
     "FeatureEventName":"Flutter Interact: Viewing Party",
-    "EventImage":"IWD.jpg",
+    "EventImage":"flutter-interact.png",
     "EventDate":{
         "Date":"12",
         "Month":"12",
@@ -12,9 +12,10 @@
     },
     "EventVenue":"Engineering Library, College of Engineering, Bharati Vidyapeeth Pune, Katraj, Pune",
     "EventVenueMapLink":"https://goo.gl/maps/qze6HCaSzdkFuPXx8",
-    "EventWebsite":"",
-    "EventDescription":"Flutter Interact Viewing Party is an event livestream from the Flutter Interact session being held in Brooklyn, NY. We’ll showcase the latest from Google Design and Flutter, Google’s free and open source UI toolkit to build beautiful, natively compiled applications for mobile, web, and desktop - all from a single codebase.",
+    "EventWebsite":"/flutterinteract",
+    "EventDescription":"The Flutter Team is holding a global party for Flutter, and we’d love you to be part of the celebration! On December 21st, we’re hosting Flutter Interact where we’ll share a variety of news and updates about Flutter. Be a part of celebration with our community, celebrate Flutter and inspire fellow community members.",
     "RegistrationLink":"https://docs.google.com/forms/d/e/1FAIpQLSciM-nL87uQd_it2ulou1mFv55aXqE9qSSnwL3No3fWhX8OzA/closedform",
-    "FBEventPageURL":""
+    "FBEventPageURL":"",
+    "content": "On December 11, interact, innovate and collaborate with the global community. Streaming live around the globe. If you want to join in, fill up the RSVP Form, and let us know on Facebook, Instagram and Twitter by using #dscbvppune #flutterinteract #flutterinteractdscbvppune to attend an amazing day to celebrate Flutter.",
+    "registrationLink": ""
 }
-
