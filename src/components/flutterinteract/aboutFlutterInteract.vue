@@ -3,8 +3,8 @@
         <v-layout wrap align-start justify-start row fill-height class="my-0" >
             <v-flex xs12 sm5 md4 lg4 class="pa-2">
                 <v-img
-                    :src="require('@/assets/img/flutter-interact.png')"
-                    :lazy-src="require('@/assets/img/flutter-interact.png')"
+                    :src="require('@/assets/img/flutter-interact.jpg')"
+                    :lazy-src="require('@/assets/img/flutter-interact.jpg')"
                     class=""
                     width="100%">
                     <v-layout
@@ -27,6 +27,8 @@
                 &nbsp;
 
                 <v-btn href="https://g.co/FlutterInteract" target="_blank" outline color="cyan" style="text-transform: capitalize;border-radius:5px"  class="ml-0" dark>Learn More</v-btn>
+                &nbsp;
+                <v-btn :href="FeatureEventDetails.rsvplink" target="_blank" class="ma-0 google-font elevation-1" color="#1a73e8" style="text-transform: capitalize;border-radius:5px;color:white">RSVP for the livestream</v-btn> 
             </v-flex> 
            
         </v-layout>
