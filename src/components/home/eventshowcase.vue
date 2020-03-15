@@ -122,17 +122,23 @@
 
 <script>
 import ChapterDetails from "@/assets/data/chapterDetails.json";
-import eventsJson from "@/assets/data/events.json";
+//import eventsJson from "@/assets/data/events.json";
+import { db } from '../firebase'
 export default {
   data() {
     return {
       chapterDetails: ChapterDetails,
-      eventsData: eventsJson,
-      events: eventsJson.events,
+      //eventsData: eventsJson,
+      events: [],
       errorMsg: "",
       errorAlert: false,
       notFoundEventFlag: false
     };
+  },
+  firestore(){
+      return {
+        events: db.collection('events')
+      }
   },
   computed: {
     showEvents: function(){

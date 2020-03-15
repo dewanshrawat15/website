@@ -1,6 +1,6 @@
 <template>
     <v-container class="pa-0 my-0">
-        <v-layout wrap align-center justify-center row fill-height class="mt-2 elevation-2 white" style="border:1px solid #e0e0e0;border-radius:5px">
+        <v-layout wrap align-center justify-center row fill-height v-for="(eventDetails,i) in featureEvent" :key="i" class="mt-2 elevation-2 white" style="border:1px solid #e0e0e0;border-radius:5px">
             <v-flex xs12 sm4 md3 lg3 class="pa-4" >
                 <v-img
                     :src="getImgUrl(eventDetails.EventImage)"
@@ -65,17 +65,22 @@
 </template>
 
 <script>
-import eventDetails from '@/assets/data/featureEvent.json'
+
+import { db } from '../firebase'
 export default {
-    components:{
-    },
+
     data() {
         return {
-            eventDetails:eventDetails
+            featureEvent:[]
         }
     },
     created(){
         
+    },
+    firestore(){
+        return {
+            featureEvent: db.collection('featureEvents')
+        }
     },
     methods:{
         getImgUrl(pic) {

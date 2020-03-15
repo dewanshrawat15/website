@@ -25,7 +25,7 @@
       :style="{'background-image':'url('+require('@/assets/img/svg/bg.svg')+')'}"
       style="background-position:right"
     >
-      <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in eventsData.upcomingEvent" :key="i">
+      <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in eventsData" :key="i">
         <v-card
           flat
           class="ma-1 pa-1 my-0 elevation-0"
@@ -82,7 +82,7 @@
         <v-slide-y-reverse-transition>
           <v-list two-line subheader class="grey lighten-5">
             <v-list-tile
-              v-for="(item,i) in eventsData.upcomingEvent"
+              v-for="(item,i) in eventsData"
               :key="i"
               avatar
               style="border-color:#e0e0e0;border-width: 1px;border-style: solid;border-top:0; border-left:0; border-right:0; border-bottom:1"
@@ -125,17 +125,21 @@
 
 <script>
 import ChapterDetails from "@/assets/data/chapterDetails.json";
-import eventsJson from "@/assets/data/events.json";
-
+import {db} from '../firebase'
 export default {
   data() {
     return {
       chapterDetails: ChapterDetails,
-      eventsData: eventsJson,
+      eventsData: [],
       notFoundUpcomingEventFlag: false,
       errorMsg: "",
       errorAlert: false
     };
+  },
+  firestore(){
+    return {
+      eventsData: db.collection('upcomingEvents')
+    }
   },
   filters: {
     summery: (val, num) => {

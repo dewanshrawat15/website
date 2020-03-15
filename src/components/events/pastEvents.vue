@@ -26,7 +26,7 @@
         </v-layout>
 
         <v-layout wrap row >
-            <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in eventsData.events" :key="i">
+            <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in events" :key="i">
                 <v-slide-y-reverse-transition>
                     <v-list two-line subheader class="pa-2">
                         <v-list-tile
@@ -74,16 +74,21 @@
 
 <script>
 import ChapterDetails from '@/assets/data/chapterDetails.json'
-import eventsJson from "@/assets/data/events.json";
+import { db } from '../firebase';
 export default {
     data() {
         return {
             chapterDetails: ChapterDetails,
-            eventsData: eventsJson,
+            events: [],
             errorMsg:'',
             errorAlert:false,
             notFoundPastEventFlag:false
         }
+    },
+    firestore(){
+        return {
+           events: db.collection('events')
+    }
     },
     filters:{
         summery: (val,num)=>{
