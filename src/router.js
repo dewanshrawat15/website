@@ -45,11 +45,6 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: () => import('./views/Contact.vue')
-    },
-    {
-      path: '/flutterinteract',
-      name: 'flutterinteract',
-      component: () => import('./views/FlutterInteract.vue')
     }
   ]
 })

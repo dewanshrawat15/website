@@ -73,22 +73,34 @@
 </template>
 
 <script>
-import ChapterDetails from '@/assets/data/chapterDetails.json'
 import { db } from '../firebase';
 export default {
     data() {
         return {
-            chapterDetails: ChapterDetails,
             events: [],
             errorMsg:'',
             errorAlert:false,
-            notFoundPastEventFlag:false
+            notFoundPastEventFlag:false,
+            currDate: this.filterDate(new Date)
         }
     },
     firestore(){
         return {
-           events: db.collection('events')
-    }
+           events: db.collection('events').orderBy('date', 'desc').where('date', '<', this.currDate)
+        }
+    },
+    methods: {
+        filterDate(date){
+            var temp = date.toLocaleDateString().split('/')
+            var newDate = ''
+            for (var i = temp.length - 1; i >= 0; i--) {
+                newDate = newDate + temp[i]
+                if(i != 0){
+                    newDate = newDate + '-'
+                }
+            }
+            return newDate
+        }
     },
     filters:{
         summery: (val,num)=>{

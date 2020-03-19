@@ -36,7 +36,7 @@
               <p class="google-font mb-2" style="font-size:140%;color:#0277bd">{{ item.title }}</p>
               <p class="google-font mt-2 mb-1">
                 <span
-                  v-html="$options.filters.summery(item.description,180)"
+                  v-html="$options.filters.summery(item.desc,180)"
                   style="font-size:110%"
                 ></span>
               </p>
@@ -124,23 +124,36 @@
 </template>
 
 <script>
-import ChapterDetails from "@/assets/data/chapterDetails.json";
+
 import {db} from '../firebase'
 export default {
   data() {
     return {
-      chapterDetails: ChapterDetails,
       eventsData: [],
       notFoundUpcomingEventFlag: false,
       errorMsg: "",
-      errorAlert: false
+      errorAlert: false,
+      currDate: this.filterDate(new Date)
     };
   },
-  firestore(){
-    return {
-      eventsData: db.collection('upcomingEvents')
-    }
-  },
+    firestore(){
+        return {
+           eventsData: db.collection('events').where('date', '>=', this.currDate)
+        }
+    },
+    methods: {
+        filterDate(date){
+            var temp = date.toLocaleDateString().split('/')
+            var newDate = ''
+            for (var i = temp.length - 1; i >= 0; i--) {
+                newDate = newDate + temp[i]
+                if(i != 0){
+                    newDate = newDate + '-'
+                }
+			}
+            return newDate
+        }
+    },
   filters: {
     summery: (val, num) => {
       return val.substring(0, num) + "...";

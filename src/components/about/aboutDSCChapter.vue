@@ -19,14 +19,14 @@
                 </v-img>
             </v-flex>
             <v-flex xs12 sm7 md8 lg8 class="pa-2 my-0">
-                <p class="google-font" style="font-size:120%;">{{chapterDetails.ChapterLongDec}}</p>
+                <p class="google-font" style="font-size:120%;">{{details.description}}</p>
 
-                <p class="google-font grey--text mt-3" style="font-size:120%">{{chapterDetails.aboutGDGProgram}}</p>
+                <p class="google-font grey--text mt-3" style="font-size:120%">{{details.about}}</p>
 
-                <v-btn :href="chapterDetails.ChapterMeetupLink" target="_blank" class="ma-0 google-font elevation-1" color="#1a73e8" style="text-transform: capitalize;border-radius:5px;color:white">Become a Member</v-btn> 
+                <v-btn v-if="details.becomeMemberURL.length>0" :href="details.becomeMemberURL" target="_blank" class="ma-0 google-font elevation-1" color="#1a73e8" style="text-transform: capitalize;border-radius:5px;color:white">Become a Member</v-btn> 
                 &nbsp;
 
-                <v-btn href="https://developers.google.com/groups" target="_blank" outline color="cyan" style="text-transform: capitalize;border-radius:5px"  class="ml-0" dark>Learn More</v-btn>
+                <v-btn :href="details.aboutDSCLink" target="_blank" outline color="cyan" style="text-transform: capitalize;border-radius:5px"  class="ml-0" dark>Learn More</v-btn>
             </v-flex> 
            
         </v-layout>
@@ -35,12 +35,17 @@
 </template>
 
 <script>
-import ChapterDetails from '@/assets/data/chapterDetails.json'
+import { db } from '../firebase'
 export default {
     data() {
         return {
-            chapterDetails: ChapterDetails
+            details: ''
         }
     },
+    firestore(){
+        return {
+            details: db.collection('details').doc("details")
+        }
+    }
 }
 </script>

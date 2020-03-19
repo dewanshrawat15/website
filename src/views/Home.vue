@@ -20,7 +20,7 @@
     <v-container fluid style="background-color:#4C4A78" >
       <v-layout wrap align-center justify-center row fill-height>
         <v-flex xs12 md10 class="">
-          <AboutGDGChapter />
+          <AboutDSCChapter />
         </v-flex>
       </v-layout>
     </v-container>
@@ -43,14 +43,6 @@
         </v-flex>
       </v-layout>
     </v-container>
-    
-     <!-- <v-container fluid >
-      <v-layout wrap align-center justify-center row fill-height>
-        <v-flex xs12 md10>
-          <wtmInfo />
-        </v-flex>
-      </v-layout>
-    </v-container> -->
 
     <v-container fluid >
       <v-layout wrap align-center justify-center row fill-height>
@@ -70,9 +62,8 @@
 <script>
   import HomeStartScreen from '@/components/home/HomeStartScreen'
   import whatWeDo from '@/components/home/whatWeDo'
-  import AboutGDGChapter from '@/components/home/AboutGDGChapter'
+  import AboutDSCChapter from '@/components/home/AboutDSCChapter'
   import eventshowcase from '@/components/home/eventshowcase'
-  // import wtmInfo from '@/components/home/wtmInfo'
   import partners from '@/components/home/partners'
   import featureEvent from '@/components/home/featureEvent'
   
@@ -80,9 +71,8 @@
     components: {
       HomeStartScreen,
       whatWeDo,
-      AboutGDGChapter,
+      AboutDSCChapter,
       eventshowcase,
-      // wtmInfo,
       partners,
       featureEvent
     }

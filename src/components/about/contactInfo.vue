@@ -7,7 +7,7 @@
 
                 <v-expansion-panel >
                     <v-expansion-panel-content
-                    v-for="(item,i) in aboutPage.communityGuideline"
+                    v-for="(item,i) in details.coc"
                     :key="i"
                     >
                         <div slot="header" class="google-font" style="font-size:120%">{{item.name}}</div>
@@ -42,14 +42,17 @@
 </template>
 
 <script>
-import ChapterDetails from '@/assets/data/chapterDetails.json'
-import aboutPage from '@/assets/data/aboutPage.json'
+import { db } from '../firebase'
 export default {
     data() {
         return {
-            chapterDetails: ChapterDetails,
-            aboutPage:aboutPage
+            details: ''
         }
     },
+    firestore(){
+        return {
+            details: db.collection('details').doc("details")
+        }
+    }
 }
 </script>

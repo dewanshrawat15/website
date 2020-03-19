@@ -23,7 +23,7 @@
     </v-layout>
 
     <v-layout wrap align-start justify-center row fill-height class="hidden-sm-and-down mb-4">
-      <v-flex xs12 sm6 md3 lg3 v-for="(item,i) in showEvents" :key="i">
+      <v-flex xs12 sm6 md3 lg3 v-for="(item,i) in events.slice(0,4)" :key="i">
         <v-card
           flat
           class="ma-1 pa-1 my-0"
@@ -121,14 +121,10 @@
 </template>
 
 <script>
-import ChapterDetails from "@/assets/data/chapterDetails.json";
-//import eventsJson from "@/assets/data/events.json";
 import { db } from '../firebase'
 export default {
   data() {
     return {
-      chapterDetails: ChapterDetails,
-      //eventsData: eventsJson,
       events: [],
       errorMsg: "",
       errorAlert: false,
@@ -137,7 +133,7 @@ export default {
   },
   firestore(){
       return {
-        events: db.collection('events')
+        events: db.collection('events').orderBy('date', 'desc')
       }
   },
   computed: {
