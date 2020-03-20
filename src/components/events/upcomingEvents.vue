@@ -25,7 +25,7 @@
       :style="{'background-image':'url('+require('@/assets/img/svg/bg.svg')+')'}"
       style="background-position:right"
     >
-      <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in eventsData.upcomingEvent" :key="i">
+      <v-flex xs12 sm6 md4 lg4 v-for="(item,i) in eventsData" :key="i">
         <v-card
           flat
           class="ma-1 pa-1 my-0 elevation-0"
@@ -36,7 +36,7 @@
               <p class="google-font mb-2" style="font-size:140%;color:#0277bd">{{ item.title }}</p>
               <p class="google-font mt-2 mb-1">
                 <span
-                  v-html="$options.filters.summery(item.description,180)"
+                  v-html="$options.filters.summery(item.desc,180)"
                   style="font-size:110%"
                 ></span>
               </p>
@@ -82,7 +82,7 @@
         <v-slide-y-reverse-transition>
           <v-list two-line subheader class="grey lighten-5">
             <v-list-tile
-              v-for="(item,i) in eventsData.upcomingEvent"
+              v-for="(item,i) in eventsData"
               :key="i"
               avatar
               style="border-color:#e0e0e0;border-width: 1px;border-style: solid;border-top:0; border-left:0; border-right:0; border-bottom:1"
@@ -124,19 +124,36 @@
 </template>
 
 <script>
-import ChapterDetails from "@/assets/data/chapterDetails.json";
-import eventsJson from "@/assets/data/events.json";
 
+import {db} from '../firebase'
 export default {
   data() {
     return {
-      chapterDetails: ChapterDetails,
-      eventsData: eventsJson,
+      eventsData: [],
       notFoundUpcomingEventFlag: false,
       errorMsg: "",
-      errorAlert: false
+      errorAlert: false,
+      currDate: this.filterDate(new Date)
     };
   },
+    firestore(){
+        return {
+           eventsData: db.collection('events').where('date', '>=', this.currDate)
+        }
+    },
+    methods: {
+        filterDate(date){
+            var temp = date.toLocaleDateString().split('/')
+            var newDate = ''
+            for (var i = temp.length - 1; i >= 0; i--) {
+                newDate = newDate + temp[i]
+                if(i != 0){
+                    newDate = newDate + '-'
+                }
+			}
+            return newDate
+        }
+    },
   filters: {
     summery: (val, num) => {
       return val.substring(0, num) + "...";

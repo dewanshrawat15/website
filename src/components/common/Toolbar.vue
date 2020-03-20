@@ -12,7 +12,7 @@
     />
 
     <v-toolbar-title class="ml-0 pl-1 mr-1">
-      <router-link :to="{ name: 'home'}" class="google-font" style="text-decoration:none; color: rgba(0,0,0,.87);">{{ChapterDetails.ChapterName}}</router-link>
+      <router-link :to="{ name: 'home'}" class="google-font" style="text-decoration:none; color: rgba(0,0,0,.87);">{{details.name}}</router-link>
     </v-toolbar-title>
     <v-spacer />
     <v-btn
@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import ChapterDetails from '@/assets/data/chapterDetails.json'
-  // Utilities
+import { db } from '../firebase'
+
   import {
     mapGetters,
     mapMutations
@@ -41,7 +41,12 @@ import ChapterDetails from '@/assets/data/chapterDetails.json'
   export default {
     data() {
       return {
-        ChapterDetails:ChapterDetails
+        details: ''
+      }
+    },
+    firestore(){
+      return {
+        details: db.collection("details").doc("details")
       }
     },
     computed: {

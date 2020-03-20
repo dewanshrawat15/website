@@ -20,7 +20,7 @@
                 <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
             </v-layout>
       </v-img>
-      <p class="google-font mt-2" style="font-size:130%">{{ ChapterDetails.ChapterName }}</p>
+      <p class="google-font mt-2" style="font-size:130%">{{ details.name }}</p>
       
     </v-flex>
     <v-list>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import ChapterDetails from '@/assets/data/chapterDetails.json'
+import { db } from '../firebase'
   // Utilities
   import {
     mapGetters,
@@ -56,7 +56,7 @@ import ChapterDetails from '@/assets/data/chapterDetails.json'
     name: 'CoreDrawer',
     data() {
       return {
-        ChapterDetails:ChapterDetails
+        details: ''
       }
     },
     computed: {
@@ -69,6 +69,11 @@ import ChapterDetails from '@/assets/data/chapterDetails.json'
           this.setDrawer(val)
         }
       }
+    },
+    firestore(){
+        return {
+            details: db.collection('details').doc("details")
+        }
     },
     methods: {
       ...mapMutations(['setDrawer']),

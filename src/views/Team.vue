@@ -18,32 +18,39 @@
         <v-flex xs12 md10 class="">
           <coreTeam/>
         </v-flex>
+        <!-- <v-flex xs12 md10 class="">
+          <technicalTeam/>
+        </v-flex>
+        <v-flex xs12 md10 class="">
+          <designingTeam/>
+        </v-flex>
+        <v-flex xs12 md10 class="">
+          <managementTeam/>
+        </v-flex>
+        <v-flex xs12 md10 class="">
+          <contentTeam/>
+        </v-flex> -->
       </v-layout>
     </v-container>
-<!-- 
-    <v-container fluid >
-      <v-layout wrap align-center justify-center row fill-height>
-        <v-flex xs12 md10 class="">
-          <organizingTeam/>
-        </v-flex>
-      </v-layout>
-    </v-container> -->
 
   </v-content>
   
 </template>
 
 <script>
-import TeamDetails from '@/assets/data/chapterDetails.json'
 import coreTeam from '@/components/team/coreTeam'
+// import technicalTeam from '@/components/team/technicalTeam'
+// import managementTeam from '@/components/team/managementTeam'
+// import contentTeam from '@/components/team/contentTeam'
+// import designingTeam from '@/components/team/designingTeam'
+
   export default {
     components: {
       coreTeam
-    },
-    data() {
-      return {
-        TeamDetails: TeamDetails,
-      }
-    },
+      // technicalTeam,
+      // managementTeam,
+      // designingTeam,
+      // contentTeam
+    }
   }
 </script>

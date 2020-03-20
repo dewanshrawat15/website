@@ -8,7 +8,7 @@
       <v-layout wrap align-center justify-center row fill-height class="my-0 py-0">
         <v-flex xs12 md10 sm10 lg10 class="py-0 my-0">
           <p class="google-font" style="font-size:130%" >Follow Us:
-            <span v-for="(item,i) in ChapterDetails.socialLinks" :key="i">
+            <span v-for="(item,i) in details.socials" :key="i">
               <v-tooltip top>
                   <v-btn flat icon :href="item.link" target="_blank" slot="activator">
                     <v-icon>{{item.icon}}</v-icon>
@@ -26,22 +26,22 @@
            <v-layout wrap align-start justify-start row class="my-2">
             <v-flex xs12 md3 sm4 lg3 class="py-2">
               <p class="google-font mb-0" style="font-size: 140%;font-weight: 300;"><b>About</b></p>  
-              <div v-for="(item,i) in FooterData.AboutSession" :key="i" class="mt-1">
-                <a :href="item.Link" class="google-font" target="_blank" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.LinkName}}</a><br>
+              <div v-for="(item,i) in footerData.aboutSession" :key="i" class="mt-1">
+                <a :href="item.link" class="google-font" target="_blank" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.name}}</a><br>
               </div>
-            </v-flex>
-
+             </v-flex>
+        
             <v-flex xs12 md3 sm4 lg3 class="py-2">
               <p class="google-font mb-0" style="font-size: 140%;font-weight: 300;"><b>Resources</b></p>  
-              <div v-for="(item,i) in FooterData.ChapterResourcesSession" :key="i" class="mt-1">
-                <a :href="item.Link" class="google-font" target="_blank" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.LinkName}}</a><br>
+              <div v-for="(item,i) in footerData.resources" :key="i" class="mt-1">
+                <a :href="item.link" class="google-font" target="_blank" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.name}}</a><br>
               </div>
             </v-flex>
 
             <v-flex xs12 md3 sm4 lg3 class="py-2">
               <p class="google-font mb-0" style="font-size: 140%;font-weight: 300;"><b>Developer Console</b></p>  
-              <div v-for="(item,i) in FooterData.DevConsole" :key="i" class="mt-1">
-                <a :href="item.Link" target="_blank" class="google-font" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.LinkName}}</a><br>
+              <div v-for="(item,i) in footerData.devConsole" :key="i" class="mt-1">
+                <a :href="item.link" target="_blank" class="google-font" style="color: #3E4551;text-decoration: none;font-size:110%">{{item.name}}</a><br>
               </div>
             </v-flex>
            </v-layout>
@@ -53,17 +53,17 @@
         <v-flex xs12 md10 lg10>
           <v-divider></v-divider>
            <v-toolbar flat color="white" class="pa-0 mx-0" style="padding:0 !important" >
-              <v-toolbar-title class="google-font pl-0 ml-0 mr-3" style="font-size:200%">{{ChapterDetails.ChapterName}}</v-toolbar-title>
+              <v-toolbar-title class="google-font pl-0 ml-0 mr-3" style="font-size:200%">{{details.name}}</v-toolbar-title>
 
               <v-btn
-                  v-for="(item,i) in FooterData.FooterEndSession" 
+                  v-for="(item,i) in footerData.footerEndSession" 
                   :key="i"
-                  :href="item.Link" target="_blank" 
+                  :href="item.link" target="_blank" 
                   class="ml-0 google-font hidden-sm-and-down"
                   style="text-transform: capitalize;font-size:110%" 
                   flat
                 >
-                  {{ item.LinkName }}
+                  {{ item.name }}
               </v-btn>
             </v-toolbar>
         </v-flex>
@@ -74,14 +74,20 @@
 </template>
 
 <script>
-  import ChapterDetails from '@/assets/data/chapterDetails.json'
-  import FooterData from '@/assets/data/footer.json'
+
+  import { db } from '../firebase'
   export default {
     data() {
       return {
-        ChapterDetails:ChapterDetails,
-        FooterData:FooterData
+        details: '',
+        footerData: ''
       }
     },
+    firestore(){
+        return {
+            details: db.collection('details').doc("details"),
+            footerData: db.collection("details").doc("footerData")
+        }
+    }
   }
 </script>
