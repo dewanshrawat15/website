@@ -76,7 +76,7 @@
         <v-slide-y-reverse-transition>
           <v-list two-line subheader>
             <v-list-tile
-              v-for="(item,i) in showEvents"
+              v-for="(item,i) in events.slice(0,4)"
               :key="i"
               avatar
               style="border-color:#e0e0e0;border-width: 1px;border-style: solid;border-top:0; border-left:0; border-right:0; border-bottom:1"
@@ -128,20 +128,24 @@ export default {
       events: [],
       errorMsg: "",
       errorAlert: false,
-      notFoundEventFlag: false
+      notFoundEventFlag: false,
+      currDate: this.filterDate()
     };
+  },
+  methods: {
+    filterDate(){
+      var currDate = new Date()
+      var tempMonth = currDate.getMonth() < 9 ? "0" + (currDate.getMonth() + 1) : currDate.getMonth() + 1
+      var tempYear = currDate.getFullYear()
+      var tempDate = currDate.getDate() < 9 ? "0" + currDate.getDate() : currDate.getDate()
+      var newDate = "" + tempYear + "-" + tempMonth + "-" + tempDate
+      return newDate
+    }
   },
   firestore(){
       return {
-        events: db.collection('events').orderBy('date', 'desc')
+        events: db.collection('events').orderBy('date', 'desc').where("date", "<", this.currDate)
       }
-  },
-  computed: {
-    showEvents: function(){
-      return this.events.filter(function(event){
-        return event.showcase;
-      })
-    }
   },
   filters: {
     summery: (val, num) => {

@@ -81,7 +81,7 @@ export default {
             errorMsg:'',
             errorAlert:false,
             notFoundPastEventFlag:false,
-            currDate: this.filterDate(new Date)
+            currDate: this.filterDate()
         }
     },
     firestore(){
@@ -90,15 +90,12 @@ export default {
         }
     },
     methods: {
-        filterDate(date){
-            var temp = date.toLocaleDateString().split('/')
-            var newDate = ''
-            for (var i = temp.length - 1; i >= 0; i--) {
-                newDate = newDate + temp[i]
-                if(i != 0){
-                    newDate = newDate + '-'
-                }
-            }
+        filterDate(){
+            var currDate = new Date()
+            var tempMonth = currDate.getMonth() < 9 ? "0" + (currDate.getMonth() + 1) : currDate.getMonth() + 1
+            var tempYear = currDate.getFullYear()
+            var tempDate = currDate.getDate() < 9 ? "0" + currDate.getDate() : currDate.getDate()
+            var newDate = "" + tempYear + "-" + tempMonth + "-" + tempDate
             return newDate
         }
     },

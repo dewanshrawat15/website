@@ -114,7 +114,7 @@
         </v-slide-y-reverse-transition>
       </v-flex>
 
-      <v-flex xs12 v-if="notFoundUpcomingEventFlag==true">
+      <v-flex xs12 v-if="eventsData.length == 0">
         <p class="google-font px-2" style="font-size:140%">
           <v-icon>highlight_off</v-icon>Upcoming Events Not Found!
         </p>
@@ -133,34 +133,31 @@ export default {
       notFoundUpcomingEventFlag: false,
       errorMsg: "",
       errorAlert: false,
-      currDate: this.filterDate(new Date)
+      currDate: this.filterDate(),
     };
   },
-    firestore(){
-        return {
-           eventsData: db.collection('events').where('date', '>=', this.currDate)
-        }
-    },
-    methods: {
-        filterDate(date){
-            var temp = date.toLocaleDateString().split('/')
-            var newDate = ''
-            for (var i = temp.length - 1; i >= 0; i--) {
-                newDate = newDate + temp[i]
-                if(i != 0){
-                    newDate = newDate + '-'
-                }
-			}
-            return newDate
-        }
-    },
+  firestore(){
+      return {
+          eventsData: db.collection('events').where('date', '>=', this.currDate)
+      }
+  },
+  methods: {
+    filterDate(){
+      var currDate = new Date()
+      var tempMonth = currDate.getMonth() < 9 ? "0" + (currDate.getMonth() + 1) : currDate.getMonth() + 1
+      var tempYear = currDate.getFullYear()
+      var tempDate = currDate.getDate() < 9 ? "0" + currDate.getDate() : currDate.getDate()
+      var newDate = "" + tempYear + "-" + tempMonth + "-" + tempDate
+      return newDate
+    }
+  },
   filters: {
     summery: (val, num) => {
       return val.substring(0, num) + "...";
     },
     dateFilter: (value)=>{
-        const date = new Date(value)
-        return date.toLocaleString(['en-US'], {month: 'short', day: '2-digit', year: 'numeric'})
+      const date = new Date(value)
+      return date.toLocaleString(['en-US'], {month: 'short', day: '2-digit', year: 'numeric'})
     }
   }
 };
