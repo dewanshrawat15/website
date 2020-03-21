@@ -18,18 +18,6 @@
         <v-flex xs12 md10 class="">
           <coreTeam/>
         </v-flex>
-        <!-- <v-flex xs12 md10 class="">
-          <technicalTeam/>
-        </v-flex>
-        <v-flex xs12 md10 class="">
-          <designingTeam/>
-        </v-flex>
-        <v-flex xs12 md10 class="">
-          <managementTeam/>
-        </v-flex>
-        <v-flex xs12 md10 class="">
-          <contentTeam/>
-        </v-flex> -->
       </v-layout>
     </v-container>
 
@@ -39,18 +27,10 @@
 
 <script>
 import coreTeam from '@/components/team/coreTeam'
-// import technicalTeam from '@/components/team/technicalTeam'
-// import managementTeam from '@/components/team/managementTeam'
-// import contentTeam from '@/components/team/contentTeam'
-// import designingTeam from '@/components/team/designingTeam'
 
   export default {
     components: {
       coreTeam
-      // technicalTeam,
-      // managementTeam,
-      // designingTeam,
-      // contentTeam
     }
   }
 </script>
