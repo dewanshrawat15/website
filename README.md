@@ -1,2 +1,112 @@
 # DSC Website
-This repository has been cloned from the [aura](https://github.com/GDG-X/aura/) template.
+![Built with VueJS](https://img.shields.io/badge/vue-2.2.4-green.svg)
+![Latest Commit](https://img.shields.io/github/last-commit/dscbvppune/dsc?style=plastic)
+
+This project aims at making websites easier to manage. We at DSC BVP Pune noticed that many DSC's have outdated websites or do not even have an existing website. In order to solve this issue, we came up with a solution where maintainers could easily manage their websites using a mobile app. The template used is [GDG-X Aura](https://github.com/GDG-X/aura) template built by [Vrijraj Singh](https://vrijraj.xyz).
+
+## Features
+- The Website is built completely using Vue.js, and the data is fetched from Firestore.
+- Firestore is a real-time cloud-based database with updates data dynamically.
+- This Website can be used as a template by other Student Clubs.
+- Easy to maintain and also be done by a non-technical member.
+- Firestore provides solutions for storage issues.
+
+## Getting Started
+- Fork [the repository](https://github.com/dscbvppune/website/) and clone it locally.
+- Install extra dependencies: ```npm install``` or ```yarn```
+- Add the firebase configurations of your project [here](https://github.com/dscbvppune/website/blob/master/src/components/firebase.js)
+- Open [manifest.json](https://github.com/dscbvppune/website/blob/master/public/manifest.json) file and update chapter details accordingly.
+- Open [index.html](https://github.com/dscbvppune/website/blob/master/public/index.html) file and update:
+  - meta description tag for search engines to display the given content
+  - meta keywords tag for search engines to be able to rank the given page correctly
+  - Script tag for Google Analytics to be able to see correct analysis.
+- For running website locally: ```npm run serve``` or ```yarn serve```
+- For the production: ```npm run build``` or ```yarn build``` and then a directory called ```dist``` will be created having the build files
+
+## Setting up on Firebase
+
+### Setting security rules on Firestore
+Create a Firestore Database, and add the following security rules to the database, to add authentication for only specific people to be able to update details on Firestore:
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read;
+      allow create, write, update, delete: if request.auth.token.email.matches("dscchapteremailaddress[@]gmail[.]com");
+    }
+  }
+}
+```
+
+### Setting security rules on Firebase Storage
+Enable the Firebase Storage, and add the following security rules to the database, to add authentication for only specific people to be able to add / update media to the storage bucket:
+```
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read;
+      allow write, create, delete, update: if request.auth.token.email.matches("dscchapteremailaddress[@]gmail[.]com");
+    }
+  }
+}
+```
+
+### Deploying on Firebase
+- Install Firebase CLI: ```npm i -g firebase-tools```
+- Create Firebase account and login into Firebase CLI: ```firebase login```
+- Open Terminal/Powershell in your directory.
+- Now type firebase login command in your Terminal/Powershell.
+- Type ```firebase init```
+- Select the project by using the arrow keys.
+- Then Select the Firebase Hosting by using the Spacebar and arrow key.
+- Type ```dist```
+- A ```firebase.json``` will be created.
+- Run on localhost: ```firebase serve``` or ```npm run serve```
+- Update ```firebase.json``` file
+```
+   {
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
+     "headers": [ 
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [ 
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          } 
+        ]
+      }, 
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png)",
+        "headers": [ {
+          "key": "Cache-Control",
+          "value": "max-age=31557600"
+        } ]
+      }
+    ]
+  }
+}
+```
+- Build and deploy by running: ```firebase deploy``` or ```npm run deploy``` or ```yarn deploy```
+
+## Contributing
+See [CONTRIBUTING.md]()
+
+## Support
+- If you have any issues, feel free to hit us up at [dscbvppune@gmail.com](mailto:dscbvppune@gmail.com)
+- You can also put up queries on GitHub issues [here](https://github.com/dscbvppune/dsc/issues)
+
+## License
+This website is a clone of the [GDG-X Aura](https://github.com/GDG-X/aura) template build by [Vrijraj Singh](https://vrijraj.xyz).
