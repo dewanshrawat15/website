@@ -11,6 +11,13 @@ This project aims at making websites easier to manage. We at DSC BVP Pune notice
 - Easy to maintain and also be done by a non-technical member.
 - Firestore provides solutions for storage issues.
 
+## Technology Stacks
+- [VueJS](https://vuejs.org/)
+- [Vuetify](https://vuetifyjs.com/en/)
+- [Firebase](https://firebase.google.com/)
+- [Service Worker & PWA](https://www.npmjs.com/package/vue-pwa)
+- [Workbox](https://developers.google.com/web/tools/workbox)
+
 ## Getting Started
 - Fork [the repository](https://github.com/dscbvppune/website/) and clone it locally.
 - Install extra dependencies: ```npm install``` or ```yarn```
@@ -102,7 +109,19 @@ service firebase.storage {
 - Build and deploy by running: ```firebase deploy``` or ```npm run deploy``` or ```yarn deploy```
 
 ## Contributing
-See [CONTRIBUTING.md]()
+Awesome! Contributions of all kinds are greatly appreciated. To help smoothen the process we have a few non-exhaustive guidelines to follow which should get you going in no time.
+
+### Using GitHub Issues
+- Feel free to use GitHub issues for questions, bug reports, and feature requests
+- Use the search feature to check for an existing issue
+- Include as much information as possible and provide any relevant resources (Eg. screenshots)
+- For bug reports ensure you have a reproducible test case
+  - A pull request with a breaking test would be super preferable here but isn't required
+
+### Submitting a Pull Request
+- Squash commits
+- Lint your code with eslint (config provided)
+- Include relevant test updates/additions
 
 ## Support
 - If you have any issues, feel free to hit us up at [dscbvppune@gmail.com](mailto:dscbvppune@gmail.com)
