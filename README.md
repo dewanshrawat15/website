@@ -1,6 +1,6 @@
 # DSC Website
 ![Built with VueJS](https://img.shields.io/badge/vue-2.2.4-green.svg)
-![Latest Commit](https://img.shields.io/github/last-commit/dscbvppune/dsc?style=plastic)
+![Latest Commit](https://img.shields.io/github/last-commit/dscbvppune/website?style=plastic)
 
 This project aims at making websites easier to manage. We at DSC BVP Pune noticed that many DSC's have outdated websites or do not even have an existing website. In order to solve this issue, we came up with a solution where maintainers could easily manage their websites using a mobile app. The template used is [GDG-X Aura](https://github.com/GDG-X/aura) template built by [Vrijraj Singh](https://vrijraj.xyz).
 
