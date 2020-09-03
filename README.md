@@ -108,6 +108,10 @@ service firebase.storage {
 ```
 - Build and deploy by running: ```firebase deploy``` or ```npm run deploy``` or ```yarn deploy```
 
+## Website Usage Information
+
+Hi, there! If you liked this project and are using it for your DSC's community then kindly fill [this](https://github.com/dscbvppune/website/issues/new?assignees=Nishchayverma&labels=usage+info&template=website-usage-information.md&title=%5BINFO%5D) usage info issue and submit it. We'll love to hear your feedback!
+
 ## Contributing
 Awesome! Contributions of all kinds are greatly appreciated. To help smoothen the process we have a few non-exhaustive guidelines to follow which should get you going in no time.
 
