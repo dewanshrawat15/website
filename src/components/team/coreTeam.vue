@@ -4,7 +4,7 @@
             <v-flex xs6 sm3 md2 lg2 v-for="(item,i) in coreTeamMembers" :key="i" class="text-xs-center" style="text-align:center">
                 <div class="text-xs-center ma-1 pa-1 py-5 my-0" >
                     <v-avatar size="100">
-                        <v-img
+                        <v-img :style={"width: '200px' , height: '50px'}
                         :src="item.profileImage"
                         :lazy-src="item.profileImage">
 
